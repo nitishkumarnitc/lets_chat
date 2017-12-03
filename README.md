@@ -1,8 +1,8 @@
 Steps to Run ?
-    1. Clone the repo. \n
-    2. cd lets_chat \n
-    3. npm install \n
-    4. npm start \n
+   - 1. Clone the repo
+   - 2. cd lets_chat
+   - 3. npm install
+   - 4. npm start
 
 UI Libraries used -
     1. React Bootstrap - https://react-bootstrap.github.io/getting-started.html
