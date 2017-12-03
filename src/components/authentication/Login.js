@@ -5,10 +5,9 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import axios from 'axios';
 
-
-class Login extends Component{
+class Login extends Component {
     constructor(props){
-        super();
+        super(props);
         this.state={
             username:'',
             password:''
@@ -16,71 +15,61 @@ class Login extends Component{
     }
 
     handleClick(event){
-        const baseUrl="http://localhost:4000/api/";
-        var self=this;
+        var apiBaseUrl = "http://localhost:4000/api/";
+        var self = this;
         var payload={
             "email":this.state.username,
             "password":this.state.password
         }
-
-        axios.post(baseUrl+'login',payload)
-            .then(response=>{
+        axios.post(apiBaseUrl+'login', payload)
+            .then(function (response) {
                 console.log(response);
-                if(response.data.code==200/**/){
+                if(response.data.code == 200){
                     console.log("Login successfull");
-                    //Redirect to chat page
-                    //save the token
-
-                }else if(response.data.code==204/**/){
-                    console.log("User Name and password donot match");
-                    //alert
-                    //stay at the same page
-                }else{
-                    console.log("User Name doesnot exist");
-                    //alert()
                 }
-
+                else if(response.data.code == 204){
+                    console.log("Username password do not match");
+                    alert("username password do not match")
+                }
+                else{
+                    console.log("Username does not exists");
+                    alert("Username does not exist");
+                }
             })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
                 <MuiThemeProvider>
                     <div>
-                        <AppBar title="Login">
-                            <TextField
-                                hintText="Enter Your User name"
-                                floatingLabelText="User Name"
-                                onChange={(event,newvalue)=>{
-                                    this.setState({username:newvalue})
-                                }}
-                            />
-                            <br/>
-                            <TextField
-                                type="password"
-                                hintText="Enter your password"
-                                floatingLabelText="Password"
-                                onChange={(event,newValue)=>{
-                                    this.setState({password:newValue})
-                                }}
-                            />
-                            <br/>
-                            <RaisedButton label="Submit"
-                                          primary={true}
-                                          style={style}
-                                          onClick={(event)=>this.handleClick(event)}
-                            />
-                        </AppBar>
+                        <AppBar
+                            title="Login"
+                        />
+                        <TextField
+                            hintText="Enter your Username"
+                            floatingLabelText="Username"
+                            onChange = {(event,newValue) => this.setState({username:newValue})}
+                        />
+                        <br/>
+                        <TextField
+                            type="password"
+                            hintText="Enter your Password"
+                            floatingLabelText="Password"
+                            onChange = {(event,newValue) => this.setState({password:newValue})}
+                        />
+                        <br/>
+                        <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
                     </div>
                 </MuiThemeProvider>
             </div>
-        )
+        );
     }
 }
-
-const style={
-    margin:15
+const style = {
+    margin: 15,
 };
-
 export default Login;
