@@ -1,12 +1,12 @@
-Steps to Run ?
-   - 1. Clone the repo
-   - 2. cd lets_chat
-   - 3. npm install
-   - 4. npm start
+Steps to Run
+   -  Clone the repo
+   -  cd lets_chat
+   -  npm install
+   -  npm start
 
 UI Libraries used -
-    1. React Bootstrap - https://react-bootstrap.github.io/getting-started.html
-    2. Material Design Library for React - http://www.material-ui.com
+   -  React Bootstrap - https://react-bootstrap.github.io/getting-started.html
+   -  Material Design Library for React - http://www.material-ui.com
 
 
 
