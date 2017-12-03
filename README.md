@@ -1,3 +1,15 @@
+Steps to Run ?
+    1. Clone the repo.
+    2. cd lets_chat
+    3. npm install
+    4. npm start
+
+UI Libraries used -
+    1. React Bootstrap - https://react-bootstrap.github.io/getting-started.html
+    2. Material Design Library for React - http://www.material-ui.com
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
