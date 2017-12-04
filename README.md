@@ -9,6 +9,10 @@ UI Libraries used -
    -  Material Design Library for React - http://www.material-ui.com
 
 
+Ref
+    - https://medium.com/technoetics/create-basic-login-forms-using-create-react-app-module-in-reactjs-511b9790dede
+    - https://stormpath.com/blog/build-a-react-app-with-user-authentication
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
